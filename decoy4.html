@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" >
+    <meta name="description" content="It's friday night , and let's have boogie night ! let's get funk and enjoy the music !" >
+    <title>It'sFriday!LetsGetFunk!</title>
+</head>
+<body>
+<style>
+    body
+    {
+
+        padding: 400px;
+        background: url("https://images.paramount.tech/uri/mgid:arc:imageassetref:bet.com:5a14aa97-4873-11e7-a442-0e40cf2fc285?quality=0.7&gen=ntrn&format=webp");
+
+        background-color: darkgoldenrod;
+        background-blend-mode: multiply;
+        background-size: 100%;
+        color: rgba(238, 187, 0, 0.91);
+        text-shadow: 2px 5px 5px rgba(0, 72, 236, 0.64);
+        text-align: center;
+        align-content: center;
+        font-weight: 800;
+        /*display: flex;*/
+        /*font-size: 5rem;*/
+    }
+    body button
+    {
+        border: 5px solid darkblue;
+        background: darkblue;
+        color: gold;
+        cursor: grab;
+        text-transform: uppercase;
+        padding: 10px ;
+
+    }
+    body button:hover
+    {
+        border: darkgoldenrod;
+        background: gold;
+        color: darkblue;
+
+        font-weight: 800;
+        padding: 20px;
+
+
+    }
+
+
+    #dis
+    {
+        display: none;
+    }
+
+
+    #giffy
+    {
+        background: url("https://media.giphy.com/media/3oz8xYyAhoIiELSNmE/giphy.gif?cid=790b7611pn03rm83exlnibs1l7ov4vqr2ebjorjvyo4s03g4&ep=v1_gifs_search&rid=giphy.gif&ct=g");
+        background-size: 100%;
+
+        height: 266px;
+        width: 480px;
+        align-content: center;
+        align-items: center;
+        margin: 0 auto;
+        display: none;
+
+
+    }
+
+
+
+</style>
+
+<h1>  Hello CSS Templates ! HappyFunkyFridayNights! </h1>
+
+
+
+
+
+
+<button id="cc65" type="button" onclick="alert('Hello from Tuesday !')">Click Mei</button>
+
+<br>
+
+<div class="countdown" id="countdown" style="text-transform:uppercase; font-size: 5rem " ></div>
+
+
+
+
+<button onclick="toggleContent()">Ready red</button>
+
+<p> <!--aa--> <span id="dis" ><div id="giffy"> Pop pop, it's show time (show time)
+Show time (show time)
+Guess who's back again? </div>  </span>  </p>
+
+
+
+
+
+
+
+<script>
+
+
+
+    // Function to toggle the content visibility
+    function toggleContent() {
+        var content = document.getElementById("dis");
+        var giffs =document.getElementById("giffy");
+        if (content.style.display === "none" && giffs.style.display ==="none")
+        {
+            content.style.display = "block";
+            giffs.style.display="block";
+        } else {
+            content.style.display = "none";
+            giffs.style.display="none";
+        }
+    }
+
+
+
+    // Function to redirect to a specific URL
+    function r22()
+    {
+        // window.location.href = "https://example.com"; // Replace "https://example.com" with your desired URL
+        var url = "https://youtu.be/UqyT8IEBkvY?si=vXa85717beGK7KDn"; // Replace "https://example.com" with your desired URL
+        window.open(url, "_blank"); // Opens a new window with the specified URL
+
+    }
+
+    document.getElementById("cc65").addEventListener("click",r22)
+
+
+
+
+    // Set the target date for the countdown (change as needed)
+    const targetDate = new Date('2024-03-31T23:59:59').getTime();
+
+    // Update the countdown every second
+    const countdownInterval = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        // Calculate days, hours, minutes, and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the countdown timer
+        document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+        // If the countdown is over, display a message
+        if (distance < 0) {
+            clearInterval(countdownInterval);
+            document.getElementById('countdown').innerHTML = 'Countdown Over!';
+        }
+    }, 1000);
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
