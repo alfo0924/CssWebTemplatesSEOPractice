@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>decoy3</title>
+</head>
+<body>
+<style>
+    body {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+</style>
+
+<label for="myProgress">Downloading files:</label>
+
+<progress id="myProgress" value="10" max="100"></progress>
+
+<button id="load">Click</button>
+
+<script>
+    // 建立一個變數i，初始值為0
+    let i = 0;
+
+    function move() {
+        // 如果變數i等於0，表示進度條尚未啟動
+        if (i === 0) {
+            // 設置變數i為1，表示進度條已經啟動
+            i = 1;
+            // 獲取id為"myProgress"的元素，即進度條
+            const elem = document.getElementById("myProgress");
+            // 初始寬度為1
+            let width = 1;
+            // 設置一個計時器，每10毫秒調用一次frame()函數
+            const id = setInterval(frame, 100);
+
+            // 建立名為frame的函數
+            function frame() {
+                // 如果寬度達到100%以上，清除計時器
+                if (width >= 100) {
+                    // 清除之前的計時器 id
+                    clearInterval(id);
+                    // 設置變數i為0，表示進度條已經停止
+                    i = 0;
+                } else {
+                    // 寬度增加1
+                    width++;
+                    // 設置進度條的值 value 為 width
+                    elem.value = width;
+                }
+            }
+        }
+    }
+    // 监听按钮点击事件
+    document.getElementById("load").addEventListener("click", move);
+</script>
+</body>
+</html>
